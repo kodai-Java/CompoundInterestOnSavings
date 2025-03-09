@@ -3,7 +3,7 @@ import { CompoundInterestCalculator } from "~/components";
 
 export const meta: MetaFunction = () => {
   return [
-    { title: "Todo" },
+    { title: "積立複利計算" },
     { name: "description", content: "Welcome to remix!" },
   ];
 };
