@@ -12,8 +12,13 @@ export const CompoundInterestCalculator: FC = () => {
    * 複利計算
    */
   const calculateCompoundInterest = (data: CompoundInterestForm) => {
+    const { annualRate, principal, years } = data;
+    const decimalAnnualRate = annualRate / 100 + 1;
     // 年率、年数、積立前の元金を複利計算する
-    setResultMoney(data.principal);
+    const resultMoney = Math.round(
+      principal * Math.pow(decimalAnnualRate, years)
+    );
+    setResultMoney(resultMoney);
   };
   const { register, handleSubmit } = useForm<CompoundInterestForm>();
   const onSubmit: SubmitHandler<CompoundInterestForm> =
